@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Official Profile</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:#f5f6f8;
+  color:#1f2933;
+}
+
+.container{
+  max-width:900px;
+  margin:40px auto;
+  background:#ffffff;
+  padding:30px;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  gap:25px;
+  align-items:center;
+  border-bottom:2px solid #e5e7eb;
+  padding-bottom:20px;
+}
+
+.header img{
+  width:140px;
+  height:170px;
+  object-fit:cover;
+  border:1px solid #ccc;
+}
+
+.header h1{
+  margin:0;
+  font-size:26px;
+}
+
+.header h2{
+  margin:6px 0 0;
+  font-size:18px;
+  font-weight:500;
+  color:#374151;
+}
+
+/* TABS */
+.tabs{
+  display:grid;
+  grid-template-columns:250px 1fr;
+  margin-top:30px;
+  min-height:300px;
+}
+
+.tab-buttons{
+  border-right:1px solid #e5e7eb;
+}
+
+.tab-buttons button{
+  width:100%;
+  padding:12px 15px;
+  border:none;
+  background:none;
+  text-align:left;
+  font-size:14px;
+  cursor:pointer;
+  border-bottom:1px solid #f1f1f1;
+}
+
+.tab-buttons button.active{
+  background:#eef2ff;
+  color:#1d4ed8;
+  font-weight:500;
+}
+
+.tab-content{
+  padding:20px;
+  display:none;
+}
+
+.tab-content.active{
+  display:block;
+}
+
+.tab-content p{
+  margin:0;
+  font-size:15px;
+}
+
+.download{
+  margin-top:15px;
+  color:#15803d;
+  font-weight:500;
+}
+
+@media(max-width:768px){
+  .tabs{
+    grid-template-columns:1fr;
+  }
+  .tab-buttons{
+    border-right:none;
+    border-bottom:1px solid #e5e7eb;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img src="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-railway/2024/12/f970420815ce484f8641be83bfaac884.jpg" alt="Profile Photo">
+    <div>
+      <h1>S. M. Salimullah Bahar</h1>
+      <h2>Rector</h2>
+    </div>
+  </div>
+
+  <!-- TABS SECTION -->
+  <div class="tabs">
+
+    <!-- TAB BUTTONS (1st column of table) -->
+    <div class="tab-buttons">
+      <button class="active" onclick="openTab('office',this)">Office</button>
+      <button onclick="openTab('web',this)">Web Portal</button>
+      <button onclick="openTab('email',this)">Email</button>
+      <button onclick="openTab('phone',this)">Phone (Office)</button>
+      <button onclick="openTab('intercom',this)">Intercom</button>
+      <button onclick="openTab('room',this)">Room Number</button>
+      <button onclick="openTab('mobile',this)">Mobile</button>
+      <button onclick="openTab('fax',this)">Fax</button>
+      <button onclick="openTab('vcard',this)">VCard</button>
+    </div>
+
+    <!-- TAB CONTENT (2nd column of table) -->
+    <div>
+      <div id="office" class="tab-content active">
+        <p>Railway Training Academy, Halishahar, Chattogram</p>
+      </div>
+
+      <div id="web" class="tab-content">
+        <p>rta.portal.gov.bd</p>
+      </div>
+
+      <div id="email" class="tab-content">
+        <p>rector@railway.gov.bd</p>
+      </div>
+
+      <div id="phone" class="tab-content">
+        <p>720910</p>
+      </div>
+
+      <div id="intercom" class="tab-content">
+        <p>—</p>
+      </div>
+
+      <div id="room" class="tab-content">
+        <p>—</p>
+      </div>
+
+      <div id="mobile" class="tab-content">
+        <p>01711506141</p>
+      </div>
+
+      <div id="fax" class="tab-content">
+        <p>—</p>
+      </div>
+
+      <div id="vcard" class="tab-content">
+        <p class="download">VCard Download</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function openTab(id, btn){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-buttons button').forEach(b=>b.classList.remove('active'));
+
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
